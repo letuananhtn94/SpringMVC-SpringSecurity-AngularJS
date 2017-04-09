@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="myApp">
+<head>
+	<title>AngularJS Demo</title>
+	
+	<!-- Library CSS -->
+	<link href="../static/css/fresher.css" th:href="@{/css/fresher.css}" rel="stylesheet" /> 
+	<link href="../static/css/cssSelector.css" th:href="@{/css/cssSelector.css}" rel="stylesheet" /> 
+			
+	<!-- Library Script -->
+	<!-- jQuery -->
+	<script src="../static/libs/jquery/jquery-3.2.0.min.js" th:src="@{/libs/jquery/jquery-3.2.0.min.js}"></script>
+	<script src="../static/libs/bootstrap-3.3.7/js/bootstrap.min.js" th:src="@{/libs/bootstrap-3.3.7/js/bootstrap.min.js}"></script>
+		
+	<!-- AngularJS -->
+	<script src="../static/libs/angular-1.6.3/angular.min.js" th:src="@{/libs/angular-1.6.3/angular.min.js}"></script>
+	<script src="../static/libs/angular-1.6.3/angular-resource.js" th:src="@{/libs/angular-1.6.3/angular-resource.js}"></script>
+	<script src="../static/libs/angular-1.6.3/angular-route.js" th:src="@{/libs/angular-1.6.3/angular-route.js}"></script>
+	
+	
+	<script src="../static/js/app.js" th:src="@{/js/app.js}"></script>	
+		
+	<script src="../static/js/jQuerySelector.js" th:src="@{/js/jQuerySelector.js}"></script>	
+		
+	<script src="../static/js/controller/fresherController.js" th:src="@{/js/controller/fresherController.js}"></script>
+	<script src="../static/js/controller/mainController.js" th:src="@{/js/controller/mainController.js}"></script>
+	<script src="../static/js/controller/aboutController.js" th:src="@{/js/controller/aboutController.js}"></script>
+		
+	<script src="../static/js/directive/customDirective.js" th:src="@{/js/directive/customDirective.js}"></script>
+	
+	<script src="../static/js/service/fresherService.js" th:src="@{/js/service/fresherService.js}"></script>
+	
+	
+	
+</head>
+<body>
+	<div id="_main">
+		<!-- Menu -->
+		<div id="_col_left">
+			<h1>Menu</h1>
+			<ul id="nav">
+				<li><a href="#">Home Page</a></li>
+				<li><a href="#fresherlist">Fresher List</a></li>
+				<li><a href="#about">About Me</a></li>
+				
+				<li><a href="/FM/logout">Logout</a></li>
+				 				
+			</ul>
+		</div>
+		
+		<!-- Content -->
+		<div id="_col_right">
+			<div ng-view=""></div>			
+		</div>
+	</div>
+	<script>
+	
+	</script>
+	
+</body>
+</html>

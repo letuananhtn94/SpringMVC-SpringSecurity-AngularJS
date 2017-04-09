@@ -1,0 +1,36 @@
+
+<h2>Fresher List</h2>
+<label>Search: 
+<input id="_search" type="text" ng-model="search">
+</label>
+
+
+<table id="freshertb">
+	<tr>
+	    <th>Employee ID</th>
+	    <th>Full Name</th> 
+	    <th>Sex</th> 
+	    <th>Short Name</th>
+	    <th>Office</th>
+	    <th>Cube</th>
+  	</tr>
+  
+  <tr ng-repeat="x in ctrl.freshers | filter:search">
+	    <td>{{ x.employeeId }}</td>
+	    <td>{{ x.fullName }}</td>
+	    <td>{{ x.sex | sexFormat }}</td>
+	    <td>{{ x.shortName }}</td>
+	    <td>{{ x.office }}</td>
+	    <td>{{ x.cube }}</td>    
+  </tr>
+</table>
+
+
+<!-- jQuery Selector -->
+<script>
+$(document).ready(function() { 		   
+ 	 $('td:contains(ETO3)').parent().children().addClass('red');
+ 	 
+ 	 $('td:contains(NTO)').parent().find('td:eq(1)').addClass('green');
+ });
+</script>

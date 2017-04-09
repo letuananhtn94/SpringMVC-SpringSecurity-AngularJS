@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta charset="utf-8" />
+<title>Fresher Management</title>
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	
+</head>
+
+<body >
+	<div class="container">
+		<div class="card card-container">
+			
+			<div align="center" >
+				<p style="color: red" th:if="${loginError}" class="error">Wrong user or password</p>
+			</div>
+			<form class="form-signin" name="myForm" th:action="@{/login}" method="POST" >
+				<input type="text" name="username" class="form-control"
+					placeholder="Username" required="required" /> <input type="password" name="password"
+					class="form-control" placeholder="Password" required="required"/>
+
+				<button class="btn btn-lg btn-primary btn-block btn-signin"
+					type="submit" >Login</button>
+			</form>
+			
+			<!-- /form -->
+		</div>
+		<!-- /card-container -->
+	</div>
+	<!-- /container -->
+	
+
+  
+</body>
+<style>body, html{
+	background-image: url("/EInvoice/images/white.jpg");
+	height: 100%;
+    background-repeat: no-repeat;
+    background-image: url("/EInvoice/images/white.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+ 	background-size: cover;}
+	</style>
+</html>

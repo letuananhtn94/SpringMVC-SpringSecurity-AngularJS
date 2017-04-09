@@ -1,0 +1,11 @@
+
+/* CSS Selector */
+
+tr:nth-child(odd) {
+    background: green;
+}
+
+tr:nth-child(1) {
+    background: red;
+}
+

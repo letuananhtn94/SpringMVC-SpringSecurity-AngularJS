@@ -1,0 +1,60 @@
+
+#_col_left{
+	width: 30%;
+	float: left;
+}
+
+#_col_right{
+	width: 65%;
+	float: right;
+	padding: 20px;
+}
+
+.highlight {
+    border-bottom: 1px solid #e6db55;
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    height: 40px;
+    padding-left: 15px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    background: #cce5ff;
+    margin: 5px;
+}
+
+ul li :hover {
+    background: green;
+    margin: 8px;
+}
+
+
+.red{
+	color: red;
+}
+
+.green{
+	color: blue;
+}
+
+#_search{
+	margin-bottom: 15px;
+}
+
+._margin{
+	margin-bottom: 5px;
+}

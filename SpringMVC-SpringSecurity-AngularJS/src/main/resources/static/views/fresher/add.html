@@ -1,0 +1,48 @@
+
+<h2>Add New Fresher</h2>
+
+<div>
+	<form ng-submit="ctrl.submit()" novalidate>
+		<div class="_margin">
+			<label>Employee ID: <input type="text" ng-model="ctrl.fresher.employeeId"></label>
+		</div>
+		
+	    <div class="_margin">
+			<label>Full name: <input type="text" ng-model="ctrl.fresher.fullName"></label>
+		</div>
+		
+		<div class="_margin">
+			<label>Sex: <select ng-model="ctrl.fresher.sex">							    
+							    <option value="M">Male
+							    <option value="F">Female							    
+							</select></label>
+		</div>
+		
+		<div class="_margin">
+			<label>Short name: <input type="text" ng-model="ctrl.fresher.shortName"></label>
+		</div>
+		
+		<div class="_margin">
+			<label>Office: <select ng-model="ctrl.fresher.office">							    
+							    <option value="ETO1">ETO1
+							    <option value="ETO3">ETO3
+							    <option value="NTO">NTO
+							</select></label>
+		</div>
+		
+		<div class="_margin">
+			<label>Cube: <input type="text" ng-model="ctrl.fresher.cube"></label>
+		</div>
+		
+	    <button type="submit">Add Fresher</button>
+  	</form>
+</div>
+
+<!-- jQuery Selector -->
+<script>
+$(document).ready(function() { 		   
+ 	 $('td:contains(ETO3)').parent().children().addClass('red');
+ 	 
+ 	 $('td:contains(NTO)').parent().find('td:eq(1)').addClass('green');
+ });
+</script>
