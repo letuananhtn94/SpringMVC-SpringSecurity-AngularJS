@@ -31,16 +31,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/resources/**", "/login.html", "/partials/**", "/error/**"
+		web.ignoring().antMatchers("/resources/**", "/login.html", "/error/**"
 				);
 	}
 
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-            .authorizeRequests()               
+            .authorizeRequests()              	
                 .antMatchers("/fresher/**").hasRole("ADMIN")
-                //.antMatchers("/").permitAll()                
+                .antMatchers("/").authenticated()              
                 .and()
             .formLogin()
             	.loginPage("/login")

@@ -1,7 +1,7 @@
 'use strict';
 
 
-app.factory('FresherService', ['$http', '$q', function($http, $q){    
+app.factory('FresherService', ['$http', function($http){    
     var factory = {
     	fetchAll: fetchAll,
         createFresher: createFresher,
@@ -12,65 +12,59 @@ app.factory('FresherService', ['$http', '$q', function($http, $q){
     
     
     function fetchAll() {
-        var deferred = $q.defer();
-
-        $http.get(BASE_URL + "fresher/getAll")
+       
+       return $http.get(BASE_URL + "fresher/getAll")
             .then(
-            function (response) {
-                deferred.resolve(response.data);                
+            function (response) {            	
+            	return response.data;                      
             },
             function(errResponse){                
-                deferred.reject(errResponse);
+            	return errResponse;
             }
         );
-        return deferred.promise;
+        
     }
 
-    //Service all api create user 
+    
     function createFresher(fresher) {
-        var deferred = $q.defer();
-
-        $http.post(BASE_URL + "fresher/create", fresher)
+       
+        return $http.post(BASE_URL + "fresher/create", fresher)
             .then(
-            function (response) {
-                deferred.resolve(response.data);
+            function (response) {              
+                return response.data;
             },
             function(errResponse){
-               
-                deferred.reject(errResponse);
+            	return errResponse;
             }
         );
-        return deferred.promise;
+        
     }
-    //Service call api update user
+   
     function updateFresher(fresher, id) {
-        var deferred = $q.defer();
-        $http.post(BASE_URL + "fresher/update/" +id, fresher)
+       
+    	return $http.post(BASE_URL + "fresher/update/" +id, fresher)
             .then(
             function (response) {
-                deferred.resolve(response.data);
+            	return response.data;
             },
             function(errResponse){               
-                deferred.reject(errResponse);
+            	return errResponse;
             }
         );
-        return deferred.promise;
+        
     }
     
     
     function deleteFresher(id) {
-        var deferred = $q.defer();
-
-        $http.get(BASE_URL + "fresher/delete/" +id)
+      
+    	return $http.get(BASE_URL + "fresher/delete/" +id)
             .then(
             function (response) {
-                deferred.resolve(response.data);
+            	return response.data;
             },
             function(errResponse){
-                
-                deferred.reject(errResponse);
+            	return errResponse;               
             }
-        );
-        return deferred.promise;
+        );        
     }
 }]);

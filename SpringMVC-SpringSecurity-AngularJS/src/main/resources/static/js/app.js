@@ -1,47 +1,27 @@
 
-var app = angular.module("myApp", ['ngRoute', 'ngResource']);
+var app = angular.module("myApp", ['ui.router', 'ngResource']);
 var BASE_URL = "http://localhost:8080/FM/";
-app.config(function($routeProvider) {
-    $routeProvider
-    .when("/", {
-        templateUrl : "views/fresher.html"
-    })
-    .when("/fresherlist", {
-        templateUrl : "views/fresher.html",       
-    })
-    .when("/about", {
-        templateUrl : "views/about.html"
-    })
-    .when("/login", {
-        templateUrl : "views/login.html"
-    })
-    .otherwise({
-		redirectTo : '/'
+
+app.config(function($stateProvider) {
+	  var homeState = {
+	    name: 'home',
+	    url: '/',
+	    templateUrl: '/FM/views/wellcome.html'
+	  }
+	  
+	  var fresherState = {
+	    name: 'fresherlist',
+	    url: '/fresherlist',
+	    templateUrl: '/FM/views/fresher.html'
+	  }
+
+	  var aboutState = {
+	    name: 'about',
+	    url: '/about',
+	    templateUrl: '/FM/views/about.html'
+	  }
+
+	  $stateProvider.state(homeState);
+	  $stateProvider.state(fresherState);
+	  $stateProvider.state(aboutState);
 	});
-});
-
-app.config(function($routeProvider) {
-  $routeProvider
-
-  .when('/', {
-    templateUrl : 'views/fresher.html',
-    controller  : 'MainController'
-  })
-
-  .when('/fresherlist', {
-    templateUrl : 'views/fresher.html',
-    controller  : 'FreshersController as ctrl'
-  })
-
-  .when('/about', {
-    templateUrl : 'views/about.html',
-    controller  : 'AboutController'
-  })
-  
-  .when('/login', {
-    templateUrl : 'views/login.html',
-    controller  : 'AboutController'
-  })
-
-  .otherwise({redirectTo: '/'});
-});

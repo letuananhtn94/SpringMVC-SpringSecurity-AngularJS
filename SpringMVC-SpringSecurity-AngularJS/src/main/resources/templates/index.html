@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-US" ng-app="myApp">
 <head>
-	<title>AngularJS Demo</title>
+	<title>Fresher Management</title>
 	
 	<!-- Library CSS -->
 	<link href="../static/css/fresher.css" th:href="@{/css/fresher.css}" rel="stylesheet" /> 
 	<link href="../static/css/cssSelector.css" th:href="@{/css/cssSelector.css}" rel="stylesheet" /> 
+	
+	<link href="../static/libs/bootstrap-3.3.7/css/bootstrap.min.css" th:href="@{libs/bootstrap-3.3.7/css/bootstrap.min.css}" rel="stylesheet" /> 
 			
 	<!-- Library Script -->
 	<!-- jQuery -->
@@ -16,6 +18,7 @@
 	<script src="../static/libs/angular-1.6.3/angular.min.js" th:src="@{/libs/angular-1.6.3/angular.min.js}"></script>
 	<script src="../static/libs/angular-1.6.3/angular-resource.js" th:src="@{/libs/angular-1.6.3/angular-resource.js}"></script>
 	<script src="../static/libs/angular-1.6.3/angular-route.js" th:src="@{/libs/angular-1.6.3/angular-route.js}"></script>
+	<script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js" th:src="@{//unpkg.com/angular-ui-router/release/angular-ui-router.min.js}"></script>
 	
 	
 	<script src="../static/js/app.js" th:src="@{/js/app.js}"></script>	
@@ -39,9 +42,9 @@
 		<div id="_col_left">
 			<h1>Menu</h1>
 			<ul id="nav">
-				<li><a href="#">Home Page</a></li>
-				<li><a href="#fresherlist">Fresher List</a></li>
-				<li><a href="#about">About Me</a></li>
+				<li><a ui-sref="home" ui-sref-active="active">Home Page</a></li>
+				<li><a ui-sref="fresherlist" ui-sref-active="active">Fresher List</a></li>
+				<li><a ui-sref="about" ui-sref-active="active">About Me</a></li>
 				
 				<li><a href="/FM/logout">Logout</a></li>
 				 				
@@ -50,7 +53,7 @@
 		
 		<!-- Content -->
 		<div id="_col_right">
-			<div ng-view=""></div>			
+			<ui-view></ui-view>
 		</div>
 	</div>
 	<script>
